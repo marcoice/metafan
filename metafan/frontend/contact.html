@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contatti — MetaFan Industry</title>
+  <meta name="description" content="Contatta MetaFan per informazioni, preventivi o partnership. Siamo a disposizione per ogni esigenza.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+
+  <!-- ═══ NAVIGATION ═══ -->
+  <nav class="navbar scrolled">
+    <div class="container">
+      <a href="index.html" class="navbar-brand">
+        <div class="brand-icon">MF</div>
+        Meta<span>Fan</span>
+      </a>
+      <div class="navbar-menu">
+        <a href="index.html">Home</a>
+        <a href="about.html">Chi Siamo</a>
+        <a href="services.html">Servizi</a>
+        <a href="technology.html">Tecnologie</a>
+        <a href="contact.html" class="active">Contatti</a>
+        <a href="login.php" class="btn btn-primary navbar-cta">Area Gestione</a>
+        <a href="login.php" class="btn btn-primary mobile-cta" style="display:none;">Area Gestione</a>
+      </div>
+      <div class="navbar-toggle" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ═══ PAGE HEADER ═══ -->
+  <header class="page-header">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <span>Contatti</span>
+      </div>
+      <h1>Mettiti in <span class="text-gradient">Contatto</span></h1>
+      <p>Hai un progetto in mente o vuoi saperne di più sui nostri servizi? Siamo qui per aiutarti.</p>
+    </div>
+  </header>
+
+  <!-- ═══ CONTACT SECTION ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="grid grid-2" style="gap:var(--space-12)">
+
+        <!-- Contact Form -->
+        <div class="fade-up">
+          <h3 style="margin-bottom:var(--space-6)">Inviaci un Messaggio</h3>
+          <form id="contactForm">
+            <div class="form-group">
+              <label class="form-label">Nome Completo *</label>
+              <input type="text" class="form-input" name="name" placeholder="Il tuo nome" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Email *</label>
+              <input type="email" class="form-input" name="email" placeholder="la.tua@email.it" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Telefono</label>
+              <input type="tel" class="form-input" name="phone" placeholder="+39 xxx xxx xxxx">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Azienda</label>
+              <input type="text" class="form-input" name="company" placeholder="Nome della tua azienda">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Oggetto *</label>
+              <select class="form-select" name="subject" required>
+                <option value="">— Seleziona un argomento —</option>
+                <option value="info">Informazioni Generali</option>
+                <option value="preventivo">Richiesta Preventivo</option>
+                <option value="partnership">Partnership</option>
+                <option value="supporto">Supporto Tecnico</option>
+                <option value="visita">Visita Aziendale</option>
+                <option value="altro">Altro</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Messaggio *</label>
+              <textarea class="form-textarea" name="message" placeholder="Descrivi la tua richiesta o il tuo progetto..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width:100%">
+              <i class="fas fa-paper-plane"></i> Invia Messaggio
+            </button>
+          </form>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="fade-up">
+          <h3 style="margin-bottom:var(--space-6)">Informazioni di Contatto</h3>
+
+          <div class="contact-info-card" style="margin-bottom:var(--space-6)">
+            <div class="contact-info-item">
+              <i class="fas fa-envelope"></i>
+              <div>
+                <h4>Email</h4>
+                <p>info@metafan.it</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <i class="fas fa-phone"></i>
+              <div>
+                <h4>Telefono</h4>
+                <p>+39 012 345 6789</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <div>
+                <h4>Sede</h4>
+                <p>Italia</p>
+              </div>
+            </div>
+
+            <div class="contact-info-item">
+              <i class="fas fa-clock"></i>
+              <div>
+                <h4>Orari</h4>
+                <p>Lunedì — Venerdì: 08:00 — 18:00<br>Sabato: 08:00 — 13:00</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Quick actions -->
+          <h4 style="margin-bottom:var(--space-4); color:var(--text-white)">Contatto Rapido</h4>
+          <div style="display:flex;flex-direction:column;gap:var(--space-3)">
+            <a href="mailto:info@metafan.it" class="btn btn-outline" style="justify-content:flex-start">
+              <i class="fas fa-envelope"></i> Scrivi un'Email
+            </a>
+            <a href="tel:+390123456789" class="btn btn-outline" style="justify-content:flex-start">
+              <i class="fas fa-phone"></i> Chiamaci
+            </a>
+          </div>
+
+          <!-- Map Placeholder -->
+          <div style="margin-top:var(--space-8);background:var(--bg-surface-2);border:1px solid var(--gold-border);border-radius:var(--radius-xl);height:200px;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:var(--space-2)">
+            <i class="fas fa-map-marked-alt" style="font-size:2rem;color:var(--gold);opacity:.4"></i>
+            <span style="font-size:.8125rem;color:var(--text-muted)">Mappa Interattiva</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FAQ ═══ -->
+  <section class="section section-dark">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="subtitle">Domande Frequenti</span>
+        <h2>FAQ</h2>
+        <p>Le risposte alle domande più comuni sui nostri servizi e prodotti.</p>
+      </div>
+
+      <div class="container-narrow" style="margin:0 auto;">
+        <div class="grid" style="gap:var(--space-4)">
+          <div class="card fade-up" style="padding:var(--space-6)">
+            <h4 style="margin-bottom:var(--space-2);color:var(--gold)">Che tipo di schede elettroniche producete?</h4>
+            <p style="font-size:.9rem;margin:0">Produciamo schede elettroniche di vario tipo: circuiti stampati multi-layer, schede con componenti SMD e through-hole, dispositivi IoT e board custom per applicazioni specifiche.</p>
+          </div>
+
+          <div class="card fade-up" style="padding:var(--space-6)">
+            <h4 style="margin-bottom:var(--space-2);color:var(--gold)">Offrite servizi di prototipazione?</h4>
+            <p style="font-size:.9rem;margin:0">Sì, disponiamo di stampanti 3D nell'area produttiva per la prototipazione rapida. Verifichiamo l'efficienza e controlliamo la struttura del prototipo prima della produzione in serie.</p>
+          </div>
+
+          <div class="card fade-up" style="padding:var(--space-6)">
+            <h4 style="margin-bottom:var(--space-2);color:var(--gold)">Come funziona il sistema AR/VR?</h4>
+            <p style="font-size:.9rem;margin:0">Il nostro sistema AR con visori VR è utilizzato per due scopi: la manutenzione assistita dei macchinari e le presentazioni immersive dell'azienda per visitatori e nuovo personale.</p>
+          </div>
+
+          <div class="card fade-up" style="padding:var(--space-6)">
+            <h4 style="margin-bottom:var(--space-2);color:var(--gold)">È possibile visitare la struttura?</h4>
+            <p style="font-size:.9rem;margin:0">Certamente! Organizziamo visite aziendali su appuntamento. Contattaci per prenotare un tour della nostra struttura e conoscere da vicino i nostri processi produttivi.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ FOOTER ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-brand">
+            <div class="brand-icon">MF</div>
+            Meta<span>Fan</span>
+          </div>
+          <p>Azienda manifatturiera leader nella produzione di schede elettroniche, dispositivi IoT e soluzioni tecnologiche avanzate per l'industria.</p>
+          <div class="footer-socials">
+            <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" aria-label="Twitter"><i class="fab fa-x-twitter"></i></a>
+            <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Navigazione</h4>
+          <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">Chi Siamo</a></li>
+            <li><a href="services.html">Servizi</a></li>
+            <li><a href="technology.html">Tecnologie</a></li>
+            <li><a href="contact.html">Contatti</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Servizi</h4>
+          <ul>
+            <li><a href="services.html">Schede Elettroniche</a></li>
+            <li><a href="services.html">Dispositivi IoT</a></li>
+            <li><a href="services.html">Stampa 3D</a></li>
+            <li><a href="services.html">Software & Firmware</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>Contatti</h4>
+          <ul>
+            <li><a href="mailto:info@metafan.it"><i class="fas fa-envelope" style="width:16px;margin-right:6px;color:var(--gold);"></i>info@metafan.it</a></li>
+            <li><a href="tel:+390123456789"><i class="fas fa-phone" style="width:16px;margin-right:6px;color:var(--gold);"></i>+39 012 345 6789</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 MetaFan Industry. Tutti i diritti riservati.</span>
+        <span>Design Premium — Prodotto con <i class="fas fa-heart" style="color:var(--gold);"></i> in Italia</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

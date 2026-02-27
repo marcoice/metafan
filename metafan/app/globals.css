@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+/* ── MetaFan Design System ── */
+@theme {
+  /* Colors */
+  --color-gold:          #c9a44c;
+  --color-gold-light:    #e2c373;
+  --color-gold-dark:     #a88630;
+  --color-bg:            #060910;
+  --color-surface-1:     #0c1120;
+  --color-surface-2:     #111827;
+  --color-surface-3:     #1a2332;
+  --color-surface-4:     #212d40;
+  --color-text-primary:  #f0f4fc;
+  --color-text-secondary:#8899b4;
+  --color-text-muted:    #556680;
+
+  /* Typography */
+  --font-sans: var(--font-inter), system-ui, -apple-system, sans-serif;
+
+  /* Spacing overrides */
+  --container-max-width: 1280px;
+}
+
+/* ── CSS Custom Properties ── */
+:root {
+  --gold:         #c9a44c;
+  --gold-light:   #e2c373;
+  --gold-dark:    #a88630;
+  --gold-glow:    rgba(201,164,76,.15);
+  --gold-border:  rgba(201,164,76,.12);
+  --bg-primary:   #060910;
+  --surface-1:    #0c1120;
+  --surface-2:    #111827;
+  --surface-3:    #1a2332;
+  --surface-4:    #212d40;
+
+  --shadow-glow:  0 0 24px rgba(201,164,76,.15);
+  --shadow-gold:  0 4px 24px rgba(201,164,76,.2);
+  --glass-bg:     rgba(12,17,32,.8);
+}
+
+/* ── Reset & Base ── */
+*, *::before, *::after { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--bg-primary);
+  color: var(--color-text-primary);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: var(--gold);
+  color: var(--bg-primary);
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-primary); }
+::-webkit-scrollbar-thumb { background: var(--surface-3); border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold-dark); }
+
+/* ── Gradient text utility ── */
+.text-gradient {
+  background: linear-gradient(135deg, var(--gold-light), var(--gold), var(--gold-dark));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Gold glow shimmer for cards ── */
+.glow-card {
+  position: relative;
+  transition: box-shadow 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+.glow-card:hover {
+  box-shadow: 0 8px 40px rgba(0,0,0,.5), var(--shadow-glow);
+  transform: translateY(-4px);
+}
+
+/* ── Hero grid pattern ── */
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(201,164,76,.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(201,164,76,.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black, transparent);
+  -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 40%, black, transparent);
+}
+
+/* ── Fade-up animation ── */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes pulseDot {
+  0%, 100% { opacity:1; transform:scale(1); }
+  50%       { opacity:.5; transform:scale(1.5); }
+}
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.animate-fade-up  { animation: fadeUp 0.6s ease both; }
+.pulse-dot        { animation: pulseDot 2s ease-in-out infinite; }
+.spin             { animation: spin 0.8s linear infinite; }
+
+/* ── Stagger delays ── */
+.stagger-1 { animation-delay: 0.075s; }
+.stagger-2 { animation-delay: 0.15s; }
+.stagger-3 { animation-delay: 0.225s; }
+.stagger-4 { animation-delay: 0.3s; }
+.stagger-5 { animation-delay: 0.375s; }
+.stagger-6 { animation-delay: 0.45s; }
+
+/* ── Timeline ── */
+.timeline-line {
+  position: absolute;
+  left: 16px;
+  top: 0; bottom: 0;
+  width: 2px;
+  background: linear-gradient(to bottom, var(--gold), rgba(201,164,76,.15), transparent);
+}
+
+/* ── Table styles ── */
+.dash-table th {
+  text-align: left;
+  padding: 0.625rem 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-text-muted);
+  background: var(--surface-3);
+  border-bottom: 1px solid var(--gold-border);
+  white-space: nowrap;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.dash-table td {
+  padding: 0.625rem 1rem;
+  border-bottom: 1px solid rgba(201,164,76,.06);
+  color: var(--color-text-secondary);
+  font-size: 0.875rem;
+  max-width: 260px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.dash-table tr:hover td {
+  background: rgba(201,164,76,.025);
+}
+
+.dash-table tr:last-child td { border-bottom: none; }
+
+/* ── Toast animation ── */
+@keyframes toastIn  { from { opacity:0; transform:translateX(40px); } to { opacity:1; transform:translateX(0); } }
+@keyframes toastOut { from { opacity:1; transform:translateX(0); } to { opacity:0; transform:translateX(40px); } }
+.toast-in  { animation: toastIn  0.3s ease-out both; }
+.toast-out { animation: toastOut 0.3s ease-in  both; }
+
